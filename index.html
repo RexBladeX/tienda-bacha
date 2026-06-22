@@ -7,139 +7,166 @@
 
 <style>
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
 }
 
 body{
-    background:#f2f2f2;
+background:#111;
+color:white;
 }
 
 header{
-    background:#111;
-    color:white;
-    text-align:center;
-    padding:20px;
+text-align:center;
+padding:40px 20px;
+background:linear-gradient(135deg,#222,#000);
 }
 
 header h1{
-    font-size:32px;
+font-size:2.5rem;
+margin-bottom:10px;
 }
 
-.productos{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:20px;
-    padding:20px;
+header p{
+color:#ccc;
+}
+
+.galeria{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+padding:30px;
 }
 
 .card{
-    background:white;
-    width:300px;
-    border-radius:15px;
-    overflow:hidden;
-    box-shadow:0 4px 10px rgba(0,0,0,0.15);
-    text-align:center;
+background:#1e1e1e;
+width:320px;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 0 20px rgba(255,255,255,.1);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
 }
 
 .card img{
-    width:100%;
-    height:250px;
-    object-fit:cover;
+width:100%;
+height:250px;
+object-fit:cover;
 }
 
-.card h2{
-    margin:10px 0;
-}
-
-.card p{
-    color:#555;
-    padding:0 10px;
+.info{
+padding:20px;
+text-align:center;
 }
 
 .precio{
-    font-size:26px;
-    font-weight:bold;
-    color:green;
-    margin:10px 0;
+font-size:28px;
+font-weight:bold;
+margin:15px 0;
+color:#00ff88;
 }
 
 .btn{
-    display:block;
-    margin:15px;
-    padding:12px;
-    background:#25D366;
-    color:white;
-    text-decoration:none;
-    border-radius:10px;
-    font-weight:bold;
+display:inline-block;
+background:#25D366;
+color:white;
+padding:12px 25px;
+border-radius:8px;
+text-decoration:none;
+font-weight:bold;
 }
 
-.btn:hover{
-    opacity:0.9;
+.instagram{
+text-align:center;
+padding:50px 20px;
+}
+
+.instagram img{
+width:220px;
+border-radius:15px;
+margin-top:15px;
 }
 
 footer{
-    background:#111;
-    color:white;
-    text-align:center;
-    padding:15px;
-    margin-top:20px;
+text-align:center;
+padding:20px;
+background:#000;
+margin-top:30px;
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+width:65px;
+height:65px;
+background:#25D366;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:32px;
+text-decoration:none;
+color:white;
+box-shadow:0 0 15px rgba(0,0,0,.4);
 }
 </style>
-
 </head>
 
 <body>
 
 <header>
-    <h1>Bacha Premium</h1>
-    <p>Calidad y diseño para tu baño</p>
+<h1>Bacha Premium</h1>
+<p>Diseño, calidad y elegancia para tu hogar</p>
 </header>
 
-<div class="productos">
+<section class="galeria">
 
-    <!-- PRODUCTO 1 -->
-    <div class="card">
-        <img src="bacha.jpg" alt="Bacha">
-        <h2>Bacha Premium</h2>
-        <p>Elegancia y calidad</p>
-        <div class="precio">$150.000</div>
-        <a class="btn" href="https://wa.me/5493794576553?text=Hola,%20quiero%20la%20Bacha%20Premium">
-            Comprar por WhatsApp
-        </a>
-    </div>
-
-    <!-- PRODUCTO 2 -->
-    <div class="card">
-        <img src="bacha1.jpg" alt="Bacha">
-        <h2>Bacha Deluxe</h2>
-        <p>Diseño moderno y resistente</p>
-        <div class="precio">$150.000</div>
-        <a class="btn" href="https://wa.me/5493794576553?text=Hola,%20quiero%20la%20Bacha%20Deluxe">
-            Comprar por WhatsApp
-        </a>
-    </div>
-
-    <!-- INSTAGRAM QR -->
-    <div class="card">
-        <img src="qr.jpg" alt="Instagram QR">
-        <h2>Instagram</h2>
-        <p>Escaneá el QR para ver más modelos</p>
-
-        <a class="btn" href="https://instagram.com/" target="_blank">
-            Abrir Instagram
-        </a>
-    </div>
-
+<div class="card">
+<img src="bacha.jpg" alt="Bacha Premium">
+<div class="info">
+<h2>Bacha Premium</h2>
+<p>Modelo moderno de alta calidad.</p>
+<div class="precio">$150.000</div>
+<a class="btn" href="https://wa.me/5493794576553">
+Comprar
+</a>
+</div>
 </div>
 
+<div class="card">
+<img src="bacha1.jpg" alt="Bacha Deluxe">
+<div class="info">
+<h2>Bacha Deluxe</h2>
+<p>Acabado elegante y resistente.</p>
+<div class="precio">$150.000</div>
+<a class="btn" href="https://wa.me/5493794576553">
+Comprar
+</a>
+</div>
+</div>
+
+</section>
+
+<section class="instagram">
+<h2>Seguinos en Instagram</h2>
+<p>Escaneá el QR</p>
+<img src="qr.jpg" alt="QR Instagram">
+</section>
+
 <footer>
-    © 2026 Bacha Premium - Todos los derechos reservados
+© 2026 Bacha Premium - Todos los derechos reservados
 </footer>
+
+<a href="https://wa.me/5493794576553" class="whatsapp">
+💬
+</a>
 
 </body>
 </html>
