@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+	<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -13,36 +13,64 @@ background:#0f172a;
 color:white;
 }
 
+/* BANNER */
+.banner img{
+width:100%;
+height:230px;
+object-fit:cover;
+display:block;
+}
+
+/* HEADER */
 header{
 background:linear-gradient(90deg,#06b6d4,#3b82f6);
-padding:20px;
+padding:15px;
 text-align:center;
-font-size:24px;
+font-size:22px;
 font-weight:bold;
 }
 
+/* BOTONES TOP */
+.top-buttons{
+display:flex;
+justify-content:center;
+gap:10px;
+padding:10px;
+}
+
+.top-buttons a{
+text-decoration:none;
+padding:10px 15px;
+border-radius:8px;
+color:white;
+font-size:14px;
+font-weight:bold;
+}
+
+.ig{
+background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
+}
+
+.wa{
+background:#22c55e;
+}
+
+/* HERO */
 .hero{
-padding:35px 20px;
 text-align:center;
+padding:10px 20px;
+opacity:0.85;
 }
 
-.hero h1{
-font-size:30px;
-margin-bottom:8px;
-}
-
-.hero p{
-opacity:0.8;
-}
-
+/* CARD */
 .card{
 background:#1e293b;
 margin:20px auto;
 padding:15px;
 border-radius:16px;
 max-width:420px;
-box-shadow:0 0 18px rgba(0,0,0,0.5);
 border:1px solid rgba(255,255,255,0.08);
+box-shadow:0 0 18px rgba(0,0,0,0.4);
 }
 
 .card img{
@@ -58,9 +86,10 @@ font-size:22px;
 .desc{
 opacity:0.75;
 font-size:14px;
-margin:5px 0 10px;
+margin:8px 0 12px;
 }
 
+/* BOTÓN */
 button{
 width:100%;
 padding:12px;
@@ -83,13 +112,6 @@ text-align:center;
 padding:20px;
 opacity:0.6;
 font-size:13px;
-margin-top:20px;
-}
-
-@media(min-width:768px){
-.card{
-max-width:500px;
-}
 }
 </style>
 
@@ -97,26 +119,45 @@ max-width:500px;
 
 <body>
 
+<!-- BANNER -->
+<div class="banner">
+<img src="bacha1.jpg" alt="Banner Bacha Deluxe">
+</div>
+
 <header>
 🛁 Tienda Bacha Deluxe
 </header>
 
-<div class="hero">
-<h1>Diseño premium para tu baño 💎</h1>
-<p>Calidad alta • Estilo moderno • Envíos rápidos</p>
+<!-- BOTONES -->
+<div class="top-buttons">
+<a class="ig" href="https://www.instagram.com/bachascapibara" target="_blank">
+📸 Instagram
+</a>
+
+<a class="wa" href="https://wa.me/5493794576553?text=Hola%20quiero%20información%20de%20la%20Bacha%20Deluxe" target="_blank">
+💬 WhatsApp
+</a>
 </div>
 
+<div class="hero">
+Diseño premium para baños modernos 💎
+</div>
+
+<!-- PRODUCTO -->
 <div class="card">
+
 <img src="bacha1.jpg" alt="Bacha Deluxe">
 
 <h2>💎 Bacha Deluxe Premium</h2>
 
 <p class="desc">
-Bacha de diseño moderno, ideal para baños elegantes y minimalistas.
-Material resistente y acabado premium.
+Bacha moderna, elegante y resistente. Perfecta para baños de lujo con diseño minimalista.
 </p>
 
-<button>Comprar ahora</button>
+<button onclick="window.open('https://wa.me/5493794576553?text=Hola%20quiero%20comprar%20la%20Bacha%20Deluxe','_blank')">
+Comprar ahora
+</button>
+
 </div>
 
 <footer>
