@@ -3,170 +3,116 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bacha Premium</title>
+<title>Tienda Bacha</title>
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
-
 body{
-background:#111;
+margin:0;
+font-family:Arial, sans-serif;
+background:#0f172a;
 color:white;
 }
 
+/* HEADER */
 header{
+background:linear-gradient(90deg,#06b6d4,#3b82f6);
+padding:20px;
 text-align:center;
-padding:40px 20px;
-background:linear-gradient(135deg,#222,#000);
+font-size:24px;
+font-weight:bold;
 }
 
-header h1{
-font-size:2.5rem;
+/* HERO */
+.hero{
+padding:40px 20px;
+text-align:center;
+}
+
+.hero h1{
+font-size:32px;
 margin-bottom:10px;
 }
 
-header p{
-color:#ccc;
+.hero p{
+opacity:0.8;
 }
 
-.galeria{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:20px;
-padding:30px;
-}
-
+/* PRODUCTO */
 .card{
-background:#1e1e1e;
-width:320px;
+background:#1e293b;
+margin:20px;
+padding:15px;
 border-radius:15px;
-overflow:hidden;
-box-shadow:0 0 20px rgba(255,255,255,.1);
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-5px);
+max-width:400px;
+margin-left:auto;
+margin-right:auto;
+box-shadow:0 0 15px rgba(0,0,0,0.4);
 }
 
 .card img{
 width:100%;
-height:250px;
-object-fit:cover;
+border-radius:12px;
 }
 
-.info{
-padding:20px;
-text-align:center;
+.price{
+color:#22c55e;
+font-size:20px;
+margin:10px 0;
 }
 
-.precio{
-font-size:28px;
-font-weight:bold;
-margin:15px 0;
-color:#00ff88;
-}
-
-.btn{
-display:inline-block;
-background:#25D366;
+button{
+width:100%;
+padding:12px;
+border:none;
+border-radius:10px;
+background:#3b82f6;
 color:white;
-padding:12px 25px;
-border-radius:8px;
-text-decoration:none;
-font-weight:bold;
+font-size:16px;
+cursor:pointer;
 }
 
-.instagram{
-text-align:center;
-padding:50px 20px;
+button:hover{
+background:#2563eb;
 }
 
-.instagram img{
-width:220px;
-border-radius:15px;
-margin-top:15px;
-}
-
+/* FOOTER */
 footer{
 text-align:center;
 padding:20px;
-background:#000;
-margin-top:30px;
+opacity:0.6;
+font-size:14px;
 }
 
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-width:65px;
-height:65px;
-background:#25D366;
-border-radius:50%;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:32px;
-text-decoration:none;
-color:white;
-box-shadow:0 0 15px rgba(0,0,0,.4);
+@media(min-width:768px){
+.card{
+max-width:500px;
+}
 }
 </style>
+
 </head>
 
 <body>
 
 <header>
-<h1>Bacha Premium</h1>
-<p>Diseño, calidad y elegancia para tu hogar</p>
+🛁 Tienda Bacha Premium
 </header>
 
-<section class="galeria">
-
-<div class="card">
-<img src="bacha.jpg" alt="Bacha Premium">
-<div class="info">
-<h2>Bacha Premium</h2>
-<p>Modelo moderno de alta calidad.</p>
-<div class="precio">$150.000</div>
-<a class="btn" href="https://wa.me/5493794576553">
-Comprar
-</a>
-</div>
+<div class="hero">
+<h1>Bachas modernas para tu baño</h1>
+<p>Calidad premium • Diseño elegante • Envíos rápidos</p>
 </div>
 
 <div class="card">
-<img src="bacha1.jpg" alt="Bacha Deluxe">
-<div class="info">
-<h2>Bacha Deluxe</h2>
-<p>Acabado elegante y resistente.</p>
-<div class="precio">$150.000</div>
-<a class="btn" href="https://wa.me/5493794576553">
-Comprar
-</a>
+<img src="bacha1.jpg" alt="Bacha">
+<h2>Bacha Moderna Cristal</h2>
+<p class="price">$45.000 ARS</p>
+<button>Comprar ahora</button>
 </div>
-</div>
-
-</section>
-
-<section class="instagram">
-<h2>Seguinos en Instagram</h2>
-<p>Escaneá el QR</p>
-<img src="qr.jpg" alt="QR Instagram">
-</section>
 
 <footer>
-© 2026 Bacha Premium - Todos los derechos reservados
+© 2026 Tienda Bacha - Todos los derechos reservados
 </footer>
-
-<a href="https://wa.me/5493794576553" class="whatsapp">
-💬
-</a>
 
 </body>
 </html>
