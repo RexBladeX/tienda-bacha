@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bacha Premium</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f2f2f2;
+}
+
+header{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+header h1{
+    font-size:32px;
+}
+
+.productos{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    width:300px;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
+    text-align:center;
+}
+
+.card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.card h2{
+    margin:10px 0;
+}
+
+.card p{
+    color:#555;
+    padding:0 10px;
+}
+
+.precio{
+    font-size:26px;
+    font-weight:bold;
+    color:green;
+    margin:10px 0;
+}
+
+.btn{
+    display:block;
+    margin:15px;
+    padding:12px;
+    background:#25D366;
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+    font-weight:bold;
+}
+
+.btn:hover{
+    opacity:0.9;
+}
+
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:20px;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <h1>Bacha Premium</h1>
+    <p>Calidad y diseño para tu baño</p>
+</header>
+
+<div class="productos">
+
+    <!-- PRODUCTO 1 -->
+    <div class="card">
+        <img src="bacha.jpg" alt="Bacha">
+        <h2>Bacha Premium</h2>
+        <p>Elegancia y calidad</p>
+        <div class="precio">$150.000</div>
+        <a class="btn" href="https://wa.me/5493794576553?text=Hola,%20quiero%20la%20Bacha%20Premium">
+            Comprar por WhatsApp
+        </a>
+    </div>
+
+    <!-- PRODUCTO 2 -->
+    <div class="card">
+        <img src="bacha1.jpg" alt="Bacha">
+        <h2>Bacha Deluxe</h2>
+        <p>Diseño moderno y resistente</p>
+        <div class="precio">$150.000</div>
+        <a class="btn" href="https://wa.me/5493794576553?text=Hola,%20quiero%20la%20Bacha%20Deluxe">
+            Comprar por WhatsApp
+        </a>
+    </div>
+
+    <!-- INSTAGRAM QR -->
+    <div class="card">
+        <img src="qr.jpg" alt="Instagram QR">
+        <h2>Instagram</h2>
+        <p>Escaneá el QR para ver más modelos</p>
+
+        <a class="btn" href="https://instagram.com/" target="_blank">
+            Abrir Instagram
+        </a>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Bacha Premium - Todos los derechos reservados
+</footer>
+
+</body>
+</html>
