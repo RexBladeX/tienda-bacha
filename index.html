@@ -13,51 +13,65 @@ background:#0f172a;
 color:white;
 }
 
-.banner img{
-width:100%;
-height:230px;
-object-fit:cover;
+/* HEADER */
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px;
+background:linear-gradient(90deg,#06b6d4,#3b82f6);
+font-size:18px;
+font-weight:bold;
+}
+
+/* MENU BUTTON */
+.menu-btn{
+font-size:26px;
+cursor:pointer;
+user-select:none;
+}
+
+/* SIDEBAR */
+.sidebar{
+position:fixed;
+top:0;
+left:-250px;
+width:220px;
+height:100%;
+background:#111827;
+padding-top:60px;
+transition:0.3s;
+box-shadow:2px 0 10px rgba(0,0,0,0.5);
+}
+
+.sidebar a{
+display:block;
+padding:15px;
+color:white;
+text-decoration:none;
+border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+.sidebar a:hover{
+background:#1f2937;
+}
+
+/* ACTIVE MENU */
+.sidebar.active{
+left:0;
+}
+
+/* SECTIONS */
+.section{
+display:none;
+padding:20px;
+}
+
+.section.active{
 display:block;
 }
 
-header{
-background:linear-gradient(90deg,#06b6d4,#3b82f6);
-padding:15px;
-text-align:center;
-font-size:22px;
-font-weight:bold;
-}
-
-.top-buttons{
-display:flex;
-justify-content:center;
-gap:10px;
-padding:10px;
-}
-
-.top-buttons a{
-text-decoration:none;
-padding:10px 15px;
-border-radius:8px;
-color:white;
-font-size:14px;
-font-weight:bold;
-}
-
-.ig{
-background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
-}
-
-.wa{
-background:#22c55e;
-}
-
-.hero{
-text-align:center;
-padding:10px 20px;
-opacity:0.85;
-}
-
+/* CARD */
 .card{
 background:#1e293b;
 margin:20px auto;
@@ -65,7 +79,6 @@ padding:15px;
 border-radius:16px;
 max-width:420px;
 border:1px solid rgba(255,255,255,0.08);
-box-shadow:0 0 18px rgba(0,0,0,0.4);
 }
 
 .card img{
@@ -78,12 +91,6 @@ margin-top:10px;
 font-size:22px;
 }
 
-.desc{
-opacity:0.75;
-font-size:14px;
-margin:8px 0 12px;
-}
-
 button{
 width:100%;
 padding:12px;
@@ -93,19 +100,17 @@ background:#3b82f6;
 color:white;
 font-size:16px;
 cursor:pointer;
-transition:0.2s;
 }
 
 button:hover{
 background:#2563eb;
-transform:scale(1.02);
 }
 
-footer{
+/* HERO */
+.hero{
 text-align:center;
-padding:20px;
-opacity:0.6;
-font-size:13px;
+padding:15px;
+opacity:0.8;
 }
 </style>
 
@@ -113,49 +118,61 @@ font-size:13px;
 
 <body>
 
-<!-- BANNER (AHORA: bacha.jpg) -->
-<div class="banner">
-<img src="bacha.jpg" alt="Banner Bacha Deluxe">
-</div>
-
+<!-- HEADER -->
 <header>
-🛁 Tienda Bacha Deluxe
+🛁 Tienda Deluxe
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
 </header>
 
-<div class="top-buttons">
-<a class="ig" href="https://www.instagram.com/bachascapibara" target="_blank">
-📸 Instagram
-</a>
-
-<a class="wa" href="https://wa.me/5493794576553?text=Hola%20quiero%20información%20de%20la%20Bacha%20Deluxe" target="_blank">
-💬 WhatsApp
-</a>
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+<a href="#" onclick="showSection('bachas')">🛁 Bachas</a>
+<a href="#" onclick="showSection('mesadas')">🪨 Mesadas</a>
 </div>
 
-<div class="hero">
-Diseño premium para baños modernos 💎
-</div>
+<!-- BACHAS -->
+<div id="bachas" class="section active">
 
-<!-- PRODUCTO (AHORA: bacha1.jpg) -->
+<div class="hero">Bachas premium 💎</div>
+
 <div class="card">
-
-<img src="bacha1.jpg" alt="Bacha Deluxe">
-
-<h2>💎 Bacha Deluxe Premium</h2>
-
-<p class="desc">
-Bacha moderna, elegante y resistente. Perfecta para baños de lujo con diseño minimalista.
-</p>
-
-<button onclick="window.open('https://wa.me/5493794576553?text=Hola%20quiero%20comprar%20la%20Bacha%20Deluxe','_blank')">
-Comprar ahora
+<img src="bacha.jpg" alt="Bacha">
+<h2>💎 Bacha Deluxe</h2>
+<button onclick="window.open('https://wa.me/5493794576553','_blank')">
+Comprar
 </button>
+</div>
 
 </div>
 
-<footer>
-© 2026 Tienda Bacha Deluxe
-</footer>
+<!-- MESADAS -->
+<div id="mesadas" class="section">
+
+<div class="hero">Mesadas modernas 🪨</div>
+
+<div class="card">
+<img src="mesada.jpg" alt="Mesada">
+<h2>🪨 Mesada Premium</h2>
+<button onclick="window.open('https://wa.me/5493794576553','_blank')">
+Comprar
+</button>
+</div>
+
+</div>
+
+<script>
+function toggleMenu(){
+document.getElementById("sidebar").classList.toggle("active");
+}
+
+function showSection(id){
+document.getElementById("bachas").classList.remove("active");
+document.getElementById("mesadas").classList.remove("active");
+
+document.getElementById(id).classList.add("active");
+document.getElementById("sidebar").classList.remove("active");
+}
+</script>
 
 </body>
 </html>
