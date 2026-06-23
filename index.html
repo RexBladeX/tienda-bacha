@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+	<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -53,8 +53,8 @@ text-decoration:none;
 border-bottom:1px solid rgba(255,255,255,0.1);
 }
 
-/* SOCIAL EN SIDEBAR */
-.sidebar .social-box{
+/* REDES */
+.social-box{
 margin-top:10px;
 padding:10px;
 border-top:1px solid rgba(255,255,255,0.2);
@@ -100,12 +100,20 @@ z-index:900;
 display:block;
 }
 
-/* BANNER */
+/* 🖼️ BANNER FIX 1024x1280 */
+.banner{
+background:#0f172a;
+display:flex;
+justify-content:center;
+padding:10px 0;
+}
+
 .banner img{
 width:100%;
-height:230px;
-object-fit:cover;
-display:block;
+max-width:500px;
+height:auto;
+object-fit:contain;
+border-radius:10px;
 }
 
 /* HERO */
@@ -129,6 +137,11 @@ box-shadow:0 0 18px rgba(0,0,0,0.4);
 .card img{
 width:100%;
 border-radius:12px;
+}
+
+.card h2{
+margin-top:10px;
+font-size:22px;
 }
 
 button{
@@ -158,7 +171,6 @@ transform:scale(1.02);
 <a href="#" onclick="show('bachas')">🛁 Bachas</a>
 <a href="#" onclick="show('mesadas')">🪨 Mesadas</a>
 
-<!-- REDES EN SIDEBAR -->
 <div class="social-box">
 
 <a class="ig" href="https://www.instagram.com/bachascapibara" target="_blank">
