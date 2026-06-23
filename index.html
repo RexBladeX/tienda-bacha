@@ -24,51 +24,42 @@ font-size:18px;
 font-weight:bold;
 }
 
-/* MENU BUTTON */
-.menu-btn{
-font-size:26px;
-cursor:pointer;
-user-select:none;
+/* SOCIAL */
+.social{
+display:flex;
+gap:8px;
 }
 
-/* SIDEBAR */
-.sidebar{
-position:fixed;
-top:0;
-left:-250px;
-width:220px;
-height:100%;
-background:#111827;
-padding-top:60px;
-transition:0.3s;
-box-shadow:2px 0 10px rgba(0,0,0,0.5);
-}
-
-.sidebar a{
-display:block;
-padding:15px;
-color:white;
+.social a{
 text-decoration:none;
-border-bottom:1px solid rgba(255,255,255,0.1);
+padding:8px 12px;
+border-radius:8px;
+color:white;
+font-size:13px;
+font-weight:bold;
 }
 
-.sidebar a:hover{
-background:#1f2937;
+.ig{
+background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
 }
 
-/* ACTIVE MENU */
-.sidebar.active{
-left:0;
+.wa{
+background:#22c55e;
 }
 
-/* SECTIONS */
-.section{
-display:none;
-padding:20px;
-}
-
-.section.active{
+/* BANNER */
+.banner img{
+width:100%;
+height:230px;
+object-fit:cover;
 display:block;
+}
+
+/* HERO */
+.hero{
+text-align:center;
+padding:10px 20px;
+opacity:0.85;
 }
 
 /* CARD */
@@ -79,6 +70,7 @@ padding:15px;
 border-radius:16px;
 max-width:420px;
 border:1px solid rgba(255,255,255,0.08);
+box-shadow:0 0 18px rgba(0,0,0,0.4);
 }
 
 .card img{
@@ -91,6 +83,13 @@ margin-top:10px;
 font-size:22px;
 }
 
+.desc{
+opacity:0.75;
+font-size:14px;
+margin:8px 0 12px;
+}
+
+/* BOTÓN */
 button{
 width:100%;
 padding:12px;
@@ -100,17 +99,19 @@ background:#3b82f6;
 color:white;
 font-size:16px;
 cursor:pointer;
+transition:0.2s;
 }
 
 button:hover{
 background:#2563eb;
+transform:scale(1.02);
 }
 
-/* HERO */
-.hero{
+footer{
 text-align:center;
-padding:15px;
-opacity:0.8;
+padding:20px;
+opacity:0.6;
+font-size:13px;
 }
 </style>
 
@@ -120,59 +121,49 @@ opacity:0.8;
 
 <!-- HEADER -->
 <header>
-🛁 Tienda Deluxe
-<div class="menu-btn" onclick="toggleMenu()">☰</div>
+🛁 Tienda Bacha Deluxe
+
+<div class="social">
+<a class="ig" href="https://www.instagram.com/bachascapibara" target="_blank" rel="noopener">
+📸 IG
+</a>
+
+<a class="wa" href="https://wa.me/5493794576553" target="_blank" rel="noopener">
+💬 WA
+</a>
+</div>
 </header>
 
-<!-- SIDEBAR -->
-<div class="sidebar" id="sidebar">
-<a href="#" onclick="showSection('bachas')">🛁 Bachas</a>
-<a href="#" onclick="showSection('mesadas')">🪨 Mesadas</a>
+<!-- BANNER -->
+<div class="banner">
+<img src="bacha.jpg" alt="Banner Bacha">
 </div>
 
-<!-- BACHAS -->
-<div id="bachas" class="section active">
+<!-- HERO -->
+<div class="hero">
+Diseño premium para baños modernos 💎
+</div>
 
-<div class="hero">Bachas premium 💎</div>
-
+<!-- PRODUCTO -->
 <div class="card">
-<img src="bacha.jpg" alt="Bacha">
+
+<img src="bacha1.jpg" alt="Bacha Deluxe">
+
 <h2>💎 Bacha Deluxe</h2>
+
+<p class="desc">
+Bacha moderna, elegante y resistente. Ideal para baños premium.
+</p>
+
 <button onclick="window.open('https://wa.me/5493794576553','_blank')">
-Comprar
+Comprar ahora
 </button>
-</div>
 
 </div>
 
-<!-- MESADAS -->
-<div id="mesadas" class="section">
-
-<div class="hero">Mesadas modernas 🪨</div>
-
-<div class="card">
-<img src="mesada.jpg" alt="Mesada">
-<h2>🪨 Mesada Premium</h2>
-<button onclick="window.open('https://wa.me/5493794576553','_blank')">
-Comprar
-</button>
-</div>
-
-</div>
-
-<script>
-function toggleMenu(){
-document.getElementById("sidebar").classList.toggle("active");
-}
-
-function showSection(id){
-document.getElementById("bachas").classList.remove("active");
-document.getElementById("mesadas").classList.remove("active");
-
-document.getElementById(id).classList.add("active");
-document.getElementById("sidebar").classList.remove("active");
-}
-</script>
+<footer>
+© 2026 Tienda Bacha Deluxe
+</footer>
 
 </body>
 </html>
