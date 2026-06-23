@@ -1,14 +1,23 @@
-	<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tienda Bacha Deluxe</title>
+
+<title>Bachas Capibara - Bachas y Mesadas Premium</title>
+
+<meta name="description" content="Bachas Capibara - Venta de bachas y mesadas premium para baños modernos.">
+<meta name="keywords" content="bachas, mesadas, baños, Bachas Capibara">
 
 <style>
-body{
+*{
 margin:0;
-font-family:Arial, sans-serif;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial,sans-serif;
 background:#0f172a;
 color:white;
 overflow-x:hidden;
@@ -21,13 +30,15 @@ justify-content:space-between;
 align-items:center;
 padding:15px;
 background:linear-gradient(90deg,#06b6d4,#3b82f6);
-font-size:18px;
+font-size:20px;
 font-weight:bold;
+position:sticky;
+top:0;
+z-index:100;
 }
 
-/* MENU */
 .menu{
-font-size:26px;
+font-size:28px;
 cursor:pointer;
 user-select:none;
 }
@@ -41,8 +52,12 @@ width:240px;
 height:100%;
 background:#111827;
 padding-top:60px;
-transition:0.3s ease;
+transition:.3s;
 z-index:1000;
+}
+
+.sidebar.active{
+left:0;
 }
 
 .sidebar a{
@@ -50,48 +65,48 @@ display:block;
 padding:15px;
 color:white;
 text-decoration:none;
-border-bottom:1px solid rgba(255,255,255,0.1);
+border-bottom:1px solid rgba(255,255,255,.1);
 }
 
-/* REDES */
+.sidebar a:hover{
+background:#1f2937;
+}
+
 .social-box{
-margin-top:10px;
 padding:10px;
-border-top:1px solid rgba(255,255,255,0.2);
+margin-top:10px;
+border-top:1px solid rgba(255,255,255,.15);
 }
 
 .social-box a{
 display:block;
-margin-top:10px;
-padding:10px;
-border-radius:8px;
 text-align:center;
+padding:12px;
+margin-top:10px;
+border-radius:10px;
 font-weight:bold;
-text-decoration:none;
-color:white;
 }
 
 .ig{
-background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
+background:linear-gradient(
+45deg,
+#f09433,
+#e6683c,
+#dc2743,
+#cc2366,
+#bc1888
+);
 }
 
 .wa{
 background:#22c55e;
 }
 
-/* ACTIVE */
-.sidebar.active{
-left:0;
-}
-
 /* OVERLAY */
 .overlay{
 position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.5);
+inset:0;
+background:rgba(0,0,0,.5);
 display:none;
 z-index:900;
 }
@@ -100,38 +115,49 @@ z-index:900;
 display:block;
 }
 
-/* 🖼️ BANNER FIX 1024x1280 */
+/* BANNER */
 .banner{
-background:#0f172a;
 display:flex;
 justify-content:center;
-padding:10px 0;
+padding:10px;
 }
 
 .banner img{
 width:100%;
 max-width:500px;
 height:auto;
-object-fit:contain;
-border-radius:10px;
+border-radius:12px;
 }
 
-/* HERO */
-.hero{
+/* TITULO */
+.titulo{
 text-align:center;
-padding:10px 20px;
-opacity:0.85;
+padding:20px;
+}
+
+.titulo h1{
+font-size:34px;
+margin-bottom:8px;
+}
+
+.titulo p{
+opacity:.8;
+font-size:16px;
+}
+
+/* SECCIONES */
+.section{
+padding:10px;
 }
 
 /* CARD */
 .card{
 background:#1e293b;
+max-width:420px;
 margin:20px auto;
 padding:15px;
 border-radius:16px;
-max-width:420px;
-border:1px solid rgba(255,255,255,0.08);
-box-shadow:0 0 18px rgba(0,0,0,0.4);
+box-shadow:0 0 18px rgba(0,0,0,.4);
 }
 
 .card img{
@@ -140,8 +166,13 @@ border-radius:12px;
 }
 
 .card h2{
-margin-top:10px;
-font-size:22px;
+margin-top:12px;
+margin-bottom:10px;
+}
+
+.card p{
+opacity:.8;
+margin-bottom:15px;
 }
 
 button{
@@ -157,10 +188,15 @@ cursor:pointer;
 
 button:hover{
 background:#2563eb;
-transform:scale(1.02);
+}
+
+footer{
+text-align:center;
+padding:25px;
+opacity:.7;
+font-size:14px;
 }
 </style>
-
 </head>
 
 <body>
@@ -168,16 +204,25 @@ transform:scale(1.02);
 <!-- SIDEBAR -->
 <div class="sidebar" id="sidebar">
 
-<a href="#" onclick="show('bachas')">🛁 Bachas</a>
-<a href="#" onclick="show('mesadas')">🪨 Mesadas</a>
+<a href="#" onclick="mostrar('bachas')">
+🛁 Bachas
+</a>
+
+<a href="#" onclick="mostrar('mesadas')">
+🪨 Mesadas
+</a>
 
 <div class="social-box">
 
-<a class="ig" href="https://www.instagram.com/bachascapibara" target="_blank">
+<a class="ig"
+href="https://www.instagram.com/bachascapibara"
+target="_blank">
 📸 Instagram
 </a>
 
-<a class="wa" href="https://wa.me/5493794576553" target="_blank">
+<a class="wa"
+href="https://wa.me/5493794576553"
+target="_blank">
 💬 WhatsApp
 </a>
 
@@ -186,64 +231,96 @@ transform:scale(1.02);
 </div>
 
 <!-- OVERLAY -->
-<div class="overlay" id="overlay" onclick="toggle()"></div>
+<div class="overlay" id="overlay" onclick="toggleMenu()"></div>
 
 <!-- HEADER -->
 <header>
-<div class="menu" onclick="toggle()">☰</div>
 
-🛁 Tienda Deluxe
+<div class="menu" onclick="toggleMenu()">
+☰
+</div>
 
-<div style="font-size:12px;opacity:0.8;">PRO</div>
+<div>
+Bachas Capibara
+</div>
+
+<div>
+💎
+</div>
+
 </header>
 
 <!-- BANNER -->
 <div class="banner">
-<img src="bacha.jpg" alt="Banner">
+<img src="bacha.jpg" alt="Banner Bachas Capibara">
+</div>
+
+<!-- TITULO -->
+<div class="titulo">
+<h1>Bachas Capibara</h1>
+<p>Bachas y mesadas premium para baños modernos</p>
 </div>
 
 <!-- BACHAS -->
-<div id="bachas">
-
-<div class="hero">Bachas premium 💎</div>
+<div id="bachas" class="section">
 
 <div class="card">
-<img src="bacha1.jpg">
-<h2>💎 Bacha Deluxe</h2>
+
+<img src="bacha1.jpg" alt="Bacha Deluxe">
+
+<h2>🛁 Bacha Deluxe</h2>
+
+<p>
+Diseño elegante y moderno para baños premium.
+</p>
 
 <button onclick="window.open('https://wa.me/5493794576553','_blank')">
-Comprar
+Comprar por WhatsApp
 </button>
+
 </div>
 
 </div>
 
 <!-- MESADAS -->
-<div id="mesadas" style="display:none">
-
-<div class="hero">Mesadas modernas 🪨</div>
+<div id="mesadas" class="section" style="display:none;">
 
 <div class="card">
-<img src="mesada.jpg">
+
+<img src="mesada.jpg" alt="Mesada Premium">
+
 <h2>🪨 Mesada Premium</h2>
 
+<p>
+Mesada resistente y elegante para complementar tu baño.
+</p>
+
 <button onclick="window.open('https://wa.me/5493794576553','_blank')">
-Comprar
+Comprar por WhatsApp
 </button>
+
 </div>
 
 </div>
+
+<footer>
+© 2026 Bachas Capibara
+</footer>
 
 <script>
-function toggle(){
+function toggleMenu(){
 document.getElementById("sidebar").classList.toggle("active");
 document.getElementById("overlay").classList.toggle("active");
 }
 
-function show(section){
-document.getElementById("bachas").style.display = section === "bachas" ? "block" : "none";
-document.getElementById("mesadas").style.display = section === "mesadas" ? "block" : "none";
-toggle();
+function mostrar(seccion){
+
+document.getElementById("bachas").style.display="none";
+document.getElementById("mesadas").style.display="none";
+
+document.getElementById(seccion).style.display="block";
+
+toggleMenu();
 }
 </script>
 
