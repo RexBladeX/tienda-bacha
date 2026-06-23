@@ -1,8 +1,12 @@
-<!DOCTYPE html><html lang="es">
+<!DOCTYPE html>
+<html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Bachas Capibara - Bachas y Mesadas Premium</title><meta name="description" content="Bachas Capibara. Venta de bachas y mesadas premium para baños modernos.">
-<meta name="keywords" content="bachas, mesadas, baños, Bachas Capibara"><style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bachas Capibara - Bachas y Mesadas Premium</title>
+
+<style>
 *{
 margin:0;
 padding:0;
@@ -44,7 +48,6 @@ background:#111827;
 padding-top:60px;
 transition:.3s;
 z-index:1000;
-overflow-y:auto;
 }
 
 .sidebar.active{
@@ -78,14 +81,7 @@ font-weight:bold;
 }
 
 .ig{
-background:linear-gradient(
-45deg,
-#f09433,
-#e6683c,
-#dc2743,
-#cc2366,
-#bc1888
-);
+background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);
 }
 
 .wa{
@@ -98,7 +94,6 @@ position:fixed;
 inset:0;
 background:rgba(0,0,0,.5);
 display:none;
-z-index:900;
 }
 
 .overlay.active{
@@ -115,7 +110,6 @@ padding:10px;
 .banner img{
 width:100%;
 max-width:500px;
-height:auto;
 border-radius:12px;
 }
 
@@ -127,19 +121,18 @@ padding:20px;
 
 .titulo h1{
 font-size:34px;
-margin-bottom:8px;
 }
 
 .titulo p{
 opacity:.8;
+margin-top:5px;
 }
 
-/* SECCIONES */
+/* CARDS */
 .section{
 padding:10px;
 }
 
-/* CARD */
 .card{
 background:#1e293b;
 max-width:450px;
@@ -154,15 +147,6 @@ width:100%;
 border-radius:12px;
 }
 
-.card h2{
-margin:12px 0;
-}
-
-.card p{
-opacity:.85;
-margin-bottom:15px;
-}
-
 button{
 width:100%;
 padding:12px;
@@ -171,11 +155,8 @@ border-radius:10px;
 background:#3b82f6;
 color:white;
 font-size:16px;
+margin-top:10px;
 cursor:pointer;
-}
-
-button:hover{
-background:#2563eb;
 }
 
 video{
@@ -188,45 +169,100 @@ text-align:center;
 padding:25px;
 opacity:.7;
 }
-</style></head><body><!-- SIDEBAR --><div class="sidebar" id="sidebar"><a href="#" onclick="mostrar('bachas')">🛁 Bachas</a>
+</style>
+</head>
 
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+
+<a href="#" onclick="mostrar('bachas')">🛁 Bachas</a>
 <a href="#" onclick="mostrar('mesadas')">🪨 Mesadas</a>
-
 <a href="#" onclick="mostrar('extras')">🎥 Extras</a>
 
-<div class="social-box"><a class="ig"
-href="https://www.instagram.com/bachascapibara"
-target="_blank">
+<div class="social-box">
+
+<a class="ig" href="https://www.instagram.com/bachascapibara" target="_blank">
 📸 Instagram
 </a>
 
-<a class="wa"
-href="https://wa.me/5493794576553"
-target="_blank">
+<a class="wa" href="https://wa.me/5493794576553" target="_blank">
 💬 WhatsApp
 </a>
 
-</div></div><!-- OVERLAY --><div class="overlay" id="overlay" onclick="toggleMenu()"></div><!-- HEADER --><header><div class="menu" onclick="toggleMenu()">☰</div><div><strong>Bachas Capibara</strong></div><div>💎</div></header><!-- BANNER --><div class="banner">
-<img src="bacha.jpg" alt="Bachas Capibara">
-</div><!-- TITULO --><div class="titulo">
+</div>
+
+</div>
+
+<div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+<!-- HEADER -->
+<header>
+<div class="menu" onclick="toggleMenu()">☰</div>
+<div>Bachas Capibara</div>
+<div>💎</div>
+</header>
+
+<!-- BANNER -->
+<div class="banner">
+<img src="bacha.jpg">
+</div>
+
+<!-- TITULO -->
+<div class="titulo">
 <h1>Bachas Capibara</h1>
 <p>Bachas y mesadas premium para baños modernos</p>
-</div><!-- BACHAS --><div id="bachas" class="section"><div class="card"><img src="bacha1.jpg" alt="Bacha Deluxe"><h2>🛁 Bacha Deluxe</h2><p>
-Diseño moderno y elegante para baños premium.
-</p><button onclick="window.open('https://wa.me/5493794576553','_blank')">
-Comprar por WhatsApp
-</button></div></div><!-- MESADAS --><div id="mesadas" class="section" style="display:none;"><div class="card"><img src="mesada.jpg" alt="Mesada Premium"><h2>🪨 Mesada Premium</h2><p>
-Mesadas resistentes y elegantes para tu baño.
-</p><button onclick="window.open('https://wa.me/5493794576553','_blank')">
-Comprar por WhatsApp
-</button></div></div><!-- EXTRAS --><div id="extras" class="section" style="display:none;"><div class="card"><h2>🎥 Video Promocional</h2><p>
-Mira nuestro video promocional.
-</p><video controls>
+</div>
+
+<!-- BACHAS -->
+<div id="bachas" class="section">
+
+<div class="card">
+<img src="bacha1.jpg">
+<h2>🛁 Bacha Deluxe</h2>
+<p>Diseño moderno y elegante.</p>
+<button onclick="window.open('https://wa.me/5493794576553')">Comprar</button>
+</div>
+
+</div>
+
+<!-- MESADAS -->
+<div id="mesadas" class="section" style="display:none;">
+
+<div class="card">
+<img src="mesada.jpg">
+<h2>🪨 Mesada Premium</h2>
+<p>Resistente y elegante.</p>
+<button onclick="window.open('https://wa.me/5493794576553')">Comprar</button>
+</div>
+
+</div>
+
+<!-- EXTRAS -->
+<div id="extras" class="section" style="display:none;">
+
+<div class="card">
+<h2>🎥 Video Promocional</h2>
+<video controls>
 <source src="video.mp4" type="video/mp4">
-Tu navegador no soporta video.
-</video></div></div><footer>
+</video>
+</div>
+
+<div class="card">
+<h2>🎬 Video Promocional 2</h2>
+<video controls>
+<source src="videopromocional2.mp4" type="video/mp4">
+</video>
+</div>
+
+</div>
+
+<footer>
 © 2026 Bachas Capibara
-</footer><script>
+</footer>
+
+<script>
 function toggleMenu(){
 document.getElementById("sidebar").classList.toggle("active");
 document.getElementById("overlay").classList.toggle("active");
@@ -242,5 +278,7 @@ document.getElementById(seccion).style.display="block";
 
 toggleMenu();
 }
-</script></body>
+</script>
+
+</body>
 </html>
