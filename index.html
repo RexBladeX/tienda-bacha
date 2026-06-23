@@ -11,6 +11,7 @@ margin:0;
 font-family:Arial, sans-serif;
 background:#0f172a;
 color:white;
+overflow-x:hidden;
 }
 
 /* HEADER */
@@ -24,19 +25,50 @@ font-size:18px;
 font-weight:bold;
 }
 
-/* SOCIAL */
-.social{
-display:flex;
-gap:8px;
+/* MENU */
+.menu{
+font-size:26px;
+cursor:pointer;
+user-select:none;
 }
 
-.social a{
-text-decoration:none;
-padding:8px 12px;
-border-radius:8px;
+/* SIDEBAR */
+.sidebar{
+position:fixed;
+top:0;
+left:-260px;
+width:240px;
+height:100%;
+background:#111827;
+padding-top:60px;
+transition:0.3s ease;
+z-index:1000;
+}
+
+.sidebar a{
+display:block;
+padding:15px;
 color:white;
-font-size:13px;
+text-decoration:none;
+border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+/* SOCIAL EN SIDEBAR */
+.sidebar .social-box{
+margin-top:10px;
+padding:10px;
+border-top:1px solid rgba(255,255,255,0.2);
+}
+
+.social-box a{
+display:block;
+margin-top:10px;
+padding:10px;
+border-radius:8px;
+text-align:center;
 font-weight:bold;
+text-decoration:none;
+color:white;
 }
 
 .ig{
@@ -45,6 +77,27 @@ background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
 
 .wa{
 background:#22c55e;
+}
+
+/* ACTIVE */
+.sidebar.active{
+left:0;
+}
+
+/* OVERLAY */
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.5);
+display:none;
+z-index:900;
+}
+
+.overlay.active{
+display:block;
 }
 
 /* BANNER */
@@ -78,18 +131,6 @@ width:100%;
 border-radius:12px;
 }
 
-.card h2{
-margin-top:10px;
-font-size:22px;
-}
-
-.desc{
-opacity:0.75;
-font-size:14px;
-margin:8px 0 12px;
-}
-
-/* BOTÓN */
 button{
 width:100%;
 padding:12px;
@@ -99,19 +140,11 @@ background:#3b82f6;
 color:white;
 font-size:16px;
 cursor:pointer;
-transition:0.2s;
 }
 
 button:hover{
 background:#2563eb;
 transform:scale(1.02);
-}
-
-footer{
-text-align:center;
-padding:20px;
-opacity:0.6;
-font-size:13px;
 }
 </style>
 
@@ -119,51 +152,88 @@ font-size:13px;
 
 <body>
 
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+
+<a href="#" onclick="show('bachas')">🛁 Bachas</a>
+<a href="#" onclick="show('mesadas')">🪨 Mesadas</a>
+
+<!-- REDES EN SIDEBAR -->
+<div class="social-box">
+
+<a class="ig" href="https://www.instagram.com/bachascapibara" target="_blank">
+📸 Instagram
+</a>
+
+<a class="wa" href="https://wa.me/5493794576553" target="_blank">
+💬 WhatsApp
+</a>
+
+</div>
+
+</div>
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay" onclick="toggle()"></div>
+
 <!-- HEADER -->
 <header>
-🛁 Tienda Bacha Deluxe
+<div class="menu" onclick="toggle()">☰</div>
 
-<div class="social">
-<a class="ig" href="https://www.instagram.com/bachascapibara" target="_blank" rel="noopener">
-📸 IG
-</a>
+🛁 Tienda Deluxe
 
-<a class="wa" href="https://wa.me/5493794576553" target="_blank" rel="noopener">
-💬 WA
-</a>
-</div>
+<div style="font-size:12px;opacity:0.8;">PRO</div>
 </header>
 
 <!-- BANNER -->
 <div class="banner">
-<img src="bacha.jpg" alt="Banner Bacha">
+<img src="bacha.jpg" alt="Banner">
 </div>
 
-<!-- HERO -->
-<div class="hero">
-Diseño premium para baños modernos 💎
-</div>
+<!-- BACHAS -->
+<div id="bachas">
 
-<!-- PRODUCTO -->
+<div class="hero">Bachas premium 💎</div>
+
 <div class="card">
-
-<img src="bacha1.jpg" alt="Bacha Deluxe">
-
+<img src="bacha1.jpg">
 <h2>💎 Bacha Deluxe</h2>
 
-<p class="desc">
-Bacha moderna, elegante y resistente. Ideal para baños premium.
-</p>
-
 <button onclick="window.open('https://wa.me/5493794576553','_blank')">
-Comprar ahora
+Comprar
 </button>
+</div>
 
 </div>
 
-<footer>
-© 2026 Tienda Bacha Deluxe
-</footer>
+<!-- MESADAS -->
+<div id="mesadas" style="display:none">
+
+<div class="hero">Mesadas modernas 🪨</div>
+
+<div class="card">
+<img src="mesada.jpg">
+<h2>🪨 Mesada Premium</h2>
+
+<button onclick="window.open('https://wa.me/5493794576553','_blank')">
+Comprar
+</button>
+</div>
+
+</div>
+
+<script>
+function toggle(){
+document.getElementById("sidebar").classList.toggle("active");
+document.getElementById("overlay").classList.toggle("active");
+}
+
+function show(section){
+document.getElementById("bachas").style.display = section === "bachas" ? "block" : "none";
+document.getElementById("mesadas").style.display = section === "mesadas" ? "block" : "none";
+toggle();
+}
+</script>
 
 </body>
 </html>
